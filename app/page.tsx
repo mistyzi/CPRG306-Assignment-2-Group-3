@@ -23,7 +23,7 @@ export default function Home() {
           <p className="text-slate-400 text-sm mt-0.5">Student Information page</p>
         </div>
       </header>
-       <div className="mb-8">
+      <div className="mb-8">
         <h2 className="text-2xl font-bold text-gray-900">Enrolled Students</h2>
         <p className="text-gray-500 mt-1 text-sm">
           Click any Card to select a student. Props flow down; then the callback
@@ -50,9 +50,9 @@ export default function Home() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {
-          students.map((student)=>(
+          students.map((student) => (
             <div key={student.id} className="cursor-pointer" onClick={() => handleSelect(student.id)}>
-              <StudentCard 
+              <StudentCard
                 firstName={student.firstName}
                 lastName={student.lastName}
                 program={student.program}
@@ -67,9 +67,9 @@ export default function Home() {
 
       </div>
 
-     
-        
-    
+
+
+
     </div>
   );
 }
