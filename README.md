@@ -3,7 +3,7 @@ A modern single‑page student management dashboard built using Next.js, React, 
 
 This application displays a list of students, allows adding new students, and includes custom UI components as required by the assignment.
 
-Features:
+## Features:
 
 ## Custom Navbar
 A static navigation bar displayed at the top of the page.
