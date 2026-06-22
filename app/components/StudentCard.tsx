@@ -1,50 +1,22 @@
-interface StudentCardProps {
-  firstName: string;
-  lastName: string;
-  email: string;
-  grade: string;
-  program: string;
-  dateOfBirth: string;
-  highlight?: boolean;
-}
-
-const StudentCard = ({
-  firstName,
-  lastName,
-  email,
-  grade,
-  program,
-  dateOfBirth,
-  highlight = false,
-
-
-}: StudentCardProps) => {
+export default function StudentCard({ student, highlight }: any) {
   return (
     <div
-      className={`bg-white rounded-xl p-6 flex flex-col gap-3
-    border-2
-    ${highlight
-          ? "border-blue-500 shadow-md shadow-blue-100"
-          : "border-gray-200 hover:border-gray-300 hover:shadow-sm"
-        }
-    `}
+      className={`p-5 rounded-xl bg-white shadow-sm border transition-all cursor-pointer ${
+        highlight ? "border-blue-500 shadow-md" : "border-gray-200"
+      }`}
     >
-      {/* Name + Program */}
-      <div className="flex flex-col">
-        <h3 className="font-bold text-gray-900 text-base">{lastName},{firstName}</h3>
-        <p className="text-sm text-gray-500">{program}</p>
-      </div>
+      <h3 className="text-lg font-semibold text-gray-900">
+        {student.lastName}, {student.firstName}
+      </h3>
 
-      {/* Grade + Year of welcoming in to this wicked world */}
-      <div className="flex items-center gap-4 text-sm">
-        <span className="font-semibold text-gray-800"> Grade: {grade}</span>
-        <span className="text-gray-400">|</span>
-        <span className="text-gray-600"> Date of birth: {dateOfBirth}</span>
-      </div>
-      <p className="text-sm text-gray-500 leading-relaxed"> student email:{email}</p>
+      <p className="text-sm text-gray-500 mt-1">{student.program}</p>
 
+      <div className="mt-3 text-sm text-gray-700">
+        <p>Grade: {student.grade}</p>
+        <p>Date of birth: {student.dateOfBirth}</p>
+        <p className="text-gray-500 text-xs mt-2">student</p>
+        <p className="text-gray-500 text-xs">email: {student.email}</p>
+      </div>
     </div>
   );
-};
-
-export default StudentCard;
+}
