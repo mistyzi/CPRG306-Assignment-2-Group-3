@@ -1,3 +1,9 @@
+/**
+ * Student Name: Misty, Zabdiel, Jonah
+ * Date: June 25, 2026
+ * This component is for the side navbar. It displays logo, application name, and list of navigational links
+ * such as the (Dashboard, Student, Programs, Settings links).
+*/
 export default function Sidebar() {
     return (
         <aside className="w-64 min-h-screen bg-blue-700 text-white flex flex-col py-8 px-6">
