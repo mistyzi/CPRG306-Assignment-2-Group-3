@@ -1,3 +1,11 @@
+/**
+ * Student Name: Misty, Zabdiel, Jonah
+ * Date: June 25, 2026
+ * Program Description: This component acts as the layout for the application. 
+ * It organizes the structure by wrapping all pages with the Sidebar and 
+ * Navbar, and provides the necessary Font and CSS styling for the entire portal.
+ */
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
