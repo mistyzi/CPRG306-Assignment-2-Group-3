@@ -1,3 +1,12 @@
+/**
+ * Student Name: Misty, Zabdiel, Jonah
+ * Date: June 25, 2026
+ * Program Description: This is the page component for the student portal. 
+ * It manages the application state, handles student selection and addition, 
+ * and handles the rendering of the AddStudentForm, StudentCard list, 
+ * and the Footer.
+ */
+
 "use client";
 
 import { useState } from "react";
@@ -10,10 +19,12 @@ export default function Home() {
   const [selectedId, setSelectedID] = useState<string | null>(null);
   const [studentList, setStudentList] = useState<Student[]>(initialStudents);
 
+  // Updates the ID to highlight the selected card, clear it if clicked again.
   const handleSelect = (studentId: string) => {
     setSelectedID((prev) => (prev === studentId ? null : studentId));
   };
 
+  // Adds a new student to the local list, which causes the UI to render again.
   const addStudent = (newStudent: Student) => {
     setStudentList((prev) => [...prev, newStudent]);
   };
@@ -24,7 +35,12 @@ export default function Home() {
     <div className="flex flex-col">
       {/* Page Title */}
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Students</h1>
+        <div className="flex items-center gap-3">
+          <h1 className="text-3xl font-bold text-gray-900">Students</h1>
+          <span className="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">
+            {studentList.length}
+          </span>
+        </div>
         <p className="text-gray-500 mt-1">
           Manage student information and enrollment.
         </p>
