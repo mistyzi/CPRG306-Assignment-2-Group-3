@@ -1,8 +1,18 @@
+/**
+ * Student Name: Misty, Zabdiel, Jonah
+ * Date: June 25, 2026
+ * Program Description: This component provides a form for adding new students to the 
+ * portal. Using the inputs, it processes the data into a student object with the 
+ * specific ID upon submission, and outputs the new data to the application's student 
+ * list.
+ */
+
 "use client";
 
 import { useState } from "react";
 import { Student } from "../data/studentdata";
 
+// This component shows the form to add a new student
 export default function AddStudentForm({ onAdd }: { onAdd: (s: Student) => void }) {
     const [form, setForm] = useState({
         firstName: "",
@@ -13,17 +23,21 @@ export default function AddStudentForm({ onAdd }: { onAdd: (s: Student) => void 
         email: "",
     });
 
+    // Runs when the user types in the text boxes
     const handleChange = (e: any) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
+    // This function runs when the user clicks the add student button to submit the information.
     const handleSubmit = (e: any) => {
         e.preventDefault();
+
+        // Creates a new student object with its specific ID and info from the form
         const newStudent: Student = {
             id: crypto.randomUUID(),
             ...form,
         };
-        onAdd(newStudent);
+        onAdd(newStudent); // Sends the new students info to the main list
         setForm({
             firstName: "",
             lastName: "",
@@ -34,6 +48,7 @@ export default function AddStudentForm({ onAdd }: { onAdd: (s: Student) => void 
         });
     };
 
+    // To handle the visuals of the form that the user sees.
     return (
         <form
             onSubmit={handleSubmit}
@@ -58,12 +73,23 @@ export default function AddStudentForm({ onAdd }: { onAdd: (s: Student) => void 
                 ))}
             </div>
 
-            <button
-                type="submit"
-                className="mt-6 bg-blue-700 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-blue-800"
-            >
-                Add Student
-            </button>
+            {/* Buttons Container */}
+            <div className="flex gap-3">
+                <button
+                    type="submit"
+                    className="mt-6 bg-blue-700 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-blue-800 transition-colors"
+                >
+                    Add Student
+                </button>
+                
+                <button
+                    type="button"
+                    onClick={() => setForm({ firstName: "", lastName: "", program: "", grade: "", dateOfBirth: "", email: "" })}
+                    className="mt-6 bg-gray-100 text-gray-700 px-5 py-2 rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors"
+                >
+                    Clear Form
+                </button>
+            </div>
         </form>
     );
 }
