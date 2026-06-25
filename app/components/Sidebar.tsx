@@ -17,16 +17,16 @@ export default function Sidebar() {
 
             {/* Navigation */}
             <nav className="flex flex-col gap-4 text-sm font-medium">
-                <a className="hover:bg-blue-600 px-3 py-2 rounded-md cursor-pointer">
+                <a href="#" className="hover:bg-blue-600 px-3 py-2 rounded-md cursor-pointer">
                     Dashboard
                 </a>
-                <a className="hover:bg-blue-600 px-3 py-2 rounded-md cursor-pointer">
+                <a href="#" className="hover:bg-blue-600 px-3 py-2 rounded-md cursor-pointer">
                     Students
                 </a>
-                <a className="hover:bg-blue-600 px-3 py-2 rounded-md cursor-pointer">
+                <a href="#" className="hover:bg-blue-600 px-3 py-2 rounded-md cursor-pointer">
                     Programs
                 </a>
-                <a className="hover:bg-blue-600 px-3 py-2 rounded-md cursor-pointer">
+                <a href="#" className="hover:bg-blue-600 px-3 py-2 rounded-md cursor-pointer">
                     Settings
                 </a>
             </nav>

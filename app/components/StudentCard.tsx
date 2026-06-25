@@ -6,7 +6,9 @@
  * border color if the card is selected.
  */
 
-export default function StudentCard({ student, highlight }: any) {
+import { Student } from "../data/studentdata";
+
+export default function StudentCard({ student, highlight }: { student: Student; highlight: boolean }) {
   return (
     <div
     // Applies a blue border when the card is selected, hover on the card when user hovers mouse.
